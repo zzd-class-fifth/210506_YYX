@@ -17,7 +17,8 @@ function request({
 }) {
 	// 请求拦截
 	let authorization = "";
-
+	
+	authorization = uni.getStorageSync('authorization');
 
 	uni.request({
 		url: baseUrl + url,

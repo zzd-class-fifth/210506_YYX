@@ -1,8 +1,10 @@
 <script>
-	export default {
-	}
+	export default {}
 </script>
 
 <style>
 	/*每个页面公共css */
+	text {
+		color: #FFFFFF;
+	}
 </style>

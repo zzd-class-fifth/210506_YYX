@@ -1,6 +1,7 @@
 <template>
 	<view>
 		zzd-prize-list
+		<zzd-button-close pageName="zzd-prize-list"></zzd-button-close>
 	</view>
 </template>
 
