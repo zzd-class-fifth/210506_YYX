@@ -1,6 +1,6 @@
 <template>
 	<view @click="onClickClose" class="zzd-button-close">
-		关闭页面
+		<image src="../../static/img/close.png" class="img_close"></image>
 	</view>
 </template>
 
@@ -29,5 +29,10 @@
 	.zzd-button-close {
 		pointer-events: auto;
 		color: #FFFFFF;
+	}
+
+	.img_close {
+		width: 89rpx;
+		height: 89rpx;
 	}
 </style>

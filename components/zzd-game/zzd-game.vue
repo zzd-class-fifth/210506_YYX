@@ -48,6 +48,7 @@
 								let data = res.data.user;
 
 								uni.setStorageSync('userInfo', data);
+								uni.setStorageSync('buildInfo', res.data.gain);
 
 								// 成功获取用户数据后~进行绑定显示
 								this.avatar = data.avatar;
@@ -93,7 +94,7 @@
 						switch (res.code) {
 							case 200:
 								uni.showToast({
-									title: '成功收取'+ res.data.count_score +"云值",
+									title: '成功收取' + res.data.count_score + "云值",
 									icon: "none",
 								})
 								break;
@@ -134,6 +135,20 @@
 			onClickSign() {
 				this.showPop('zzd-sign');
 			},
+
+			// 建筑升级回调 
+			buildUp(param) {
+				// 切换对应建筑的图片 同时执行动画
+				
+				// 刷新用户是数据信息
+				this.get_user_info();
+			},
+		},
+		created() {
+			uni.$on('buildUp', this.buildUp);
+		},
+		destroyed() {
+			uni.$off('buildUp', this.buildUp);
 		}
 	}
 </script>
